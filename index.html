@@ -268,7 +268,9 @@
         // 5. 辅助函数：渲染用户信息
         function renderUserInfo(user) {
                        // 在renderUserInfo函数中，将头像设置部分修改为：
-            userAvatar.src = user.avatar.replace(/^http:/, 'https:'); // 强制转换为HTTPS协议
+            // 基础信息（重点修改头像URL，通过代理加载）
+            const proxy = 'https://corsproxy.io/?'; // 使用CORS代理
+            userAvatar.src = proxy + user.avatar; // 通过代理转发头像请求
             userAvatar.alt = `${user.name}的头像`;
             userName.textContent = user.name;
             userLevel.textContent = `LV.${user.level}`;
@@ -334,4 +336,5 @@
         uidInput.value = '616856644';
     </script>
 </body>
+
 </html>
