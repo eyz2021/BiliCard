@@ -269,7 +269,7 @@
         function renderUserInfo(user) {
                        // 在renderUserInfo函数中，将头像设置部分修改为：
             // 基础信息（重点修改头像URL，通过代理加载）
-            const proxy = 'https://proxy.cors.sh/';
+            const proxy = 'https://api.allorigins.win/raw?url=';
             userAvatar.src = proxy + user.avatar; // 通过代理转发头像请求
             userAvatar.alt = `${user.name}的头像`;
             userName.textContent = user.name;
@@ -338,4 +338,5 @@
 </body>
 
 </html>
+
 
